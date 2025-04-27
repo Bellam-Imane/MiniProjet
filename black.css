@@ -2,16 +2,71 @@
     #airpod {
      margin-top: 50px;    
     } 
+    #mouv{
+      
+      margin-left: 120px;
+    }
+}
+
+@media (max-width: 1110px) {
+    .logo-text {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+}
+
+
+
+
+
+
+
+
+@media (max-width: 900px) {  /* Ajustez cette valeur selon le breakpoint exact souhaité */
+    .logo-text {
+        display: none !important;  /* Cache complètement le logo et le texte */
+    }
+    
+    /* Optionnel : ajustement de la barre de recherche pour prendre toute la largeur */
+    .search-container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 10px;
+    }
+}
+
+
+#nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    height: auto; /* Supprimez la hauteur fixe */
+    position: relative; /* Pour le positionnement absolu des enfants */
+}
+
+
+.logo-text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    left: 50px;
+    
+}
+
+
+.col-sm-6.col-md-4.text-center img{
+    margin-bottom: 20px;
 }
 
 
 nav {
     display: flex;
-    justify-content: center; 
-    align-items: center; 
+    align-items: center;
+    justify-content: center; /* Centre les éléments horizontalement */
 }
-
-
 
 
 .search-container {
@@ -22,8 +77,12 @@ nav {
     border: 2px solid goldenrod;
     border-radius: 25px;
     padding: 10px;
-    width: 320px;
+    width: 200px;
     height: 50px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 300px;
 }
 
 .search-input {
@@ -65,7 +124,7 @@ img {
     pointer-events: auto; 
 }
 
-img:hover {
+img:hover:not(#sans) {
     transform: scale(1.1) rotate(3deg);
 }
 
@@ -84,11 +143,11 @@ img:hover {
     
 } 
 
-/*
+
 #productList::-webkit-scrollbar {
     display: none; 
 }
-*/
+
 
 #productList li {
     padding: 10px;
@@ -99,6 +158,59 @@ img:hover {
 
 #productList li:hover {
     background-color: white;
+}
+
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    max-width: 400px;
+    text-align: center;
+}
+
+
+
+.close {
+    float: right;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.botonat {
+        font-family: 'Poppins', sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        border: none;
+        border-radius: 50px;
+        width: 100px;
+        background: linear-gradient(135deg, goldenrod, rgb(172, 137, 46));
+        color: white;
+        cursor: pointer;
+}
+
+.botonat:hover {
+        box-shadow: 0 10px 25px rgb(160, 125, 36, 0.7);
 }
 
 #purchaseModal {
@@ -161,50 +273,6 @@ img:hover {
     float: right;
     font-size: 24px;
     cursor: pointer;
-    color: red;
+    color: goldenrod;
     font-weight: bold;
-}
-
-input, button {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-}
-
-.botonat {
-        font-family: 'Poppins', sans-serif;
-        font-size: 18px;
-        font-weight: 500;
-        border: none;
-        border-radius: 50px;
-        width: 100px;
-        background: linear-gradient(135deg, goldenrod, rgb(172, 137, 46));
-        color: white;
-        cursor: pointer;
-}
-
-.botonat:hover {
-        box-shadow: 0 10px 25px rgb(160, 125, 36, 0.7);
-}
-
-
-
-
-
-
-
-.btn-primary {
-    font-family: 'Poppins', sans-serif;
-        font-size: 18px;
-        font-weight: 500;
-        border: none;
-        border-radius: 50px;
-        width: 100px;
-        background: linear-gradient(135deg, goldenrod, rgb(172, 137, 46));
-        color: white;
-        cursor: pointer;
-}
-
-.btn-primary:hover {
-    box-shadow: 0 10px 25px rgb(160, 125, 36, 0.7);
 }
