@@ -1,0 +1,210 @@
+@media (max-width: 768px) {
+    #airpod {
+     margin-top: 50px;    
+    } 
+}
+
+
+nav {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+
+
+
+.search-container {
+   
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 2px solid goldenrod;
+    border-radius: 25px;
+    padding: 10px;
+    width: 320px;
+    height: 50px;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 10px;
+    width: 300px;
+    background: none;
+    border-radius: 20px;
+    
+     
+}
+
+.search-button {
+   background: transparent;
+   border: none;
+   cursor: pointer;
+   font-size: 18px;
+   color: black;
+   width: auto;
+}
+
+.search-button i {
+    margin-left: 180px;
+    font-size: 20px; 
+    margin: 0 ;
+    background: transparent;
+}
+
+
+
+
+img {
+    display: inline-block;
+    z-index: 1;
+    padding: 10px;
+    transition: transform 0.3s ease-in-out;
+    pointer-events: auto; 
+}
+
+img:hover {
+    transform: scale(1.1) rotate(3deg);
+}
+
+#productList {
+    position:absolute;
+    background: white;
+    border: 1px solid #ccc;
+    width: 320px;
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 5px;
+    z-index: 1000;
+    margin-top: 263px;
+    margin-left: -10px;
+    border-radius: 25px;
+    
+} 
+
+/*
+#productList::-webkit-scrollbar {
+    display: none; 
+}
+*/
+
+#productList li {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+#productList li:hover {
+    background-color: white;
+}
+
+#purchaseModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    animation: zoomIn 0.3s ease-in-out;
+}
+
+@keyframes zoomIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    color: goldenrod;
+}
+
+.modal-content input, 
+.modal-content button {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.modal-content button {
+    background-color: goldenrod;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: darkorange;
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+    color: red;
+    font-weight: bold;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.botonat {
+        font-family: 'Poppins', sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        border: none;
+        border-radius: 50px;
+        width: 100px;
+        background: linear-gradient(135deg, goldenrod, rgb(172, 137, 46));
+        color: white;
+        cursor: pointer;
+}
+
+.botonat:hover {
+        box-shadow: 0 10px 25px rgb(160, 125, 36, 0.7);
+}
+
+
+
+
+
+
+
+.btn-primary {
+    font-family: 'Poppins', sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        border: none;
+        border-radius: 50px;
+        width: 100px;
+        background: linear-gradient(135deg, goldenrod, rgb(172, 137, 46));
+        color: white;
+        cursor: pointer;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 10px 25px rgb(160, 125, 36, 0.7);
+}

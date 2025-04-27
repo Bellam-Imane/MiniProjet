@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produit - Détails</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="black.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 id="productTitle"></h2>
+        <div id="productContainer" class="row"></div>
+        <a href="black.html">
+            <div class="btn btn-outline-warning">
+                retour
+            </div>
+        </a>
+    </div>
+
+    <script>
+      
+        const products = {
+            "Watch": [
+                { name: "Watch Classique", price: 500, image: "ws.jpg" },
+                { name: "Watch Sport", price: 600, image: "w6.jpg" },
+                { name: "Smart Watch", price: 550, image: "w5.jpg" },
+                { name: "Watch Classique", price: 500, image: "w1.jpg" },
+                { name: "Watch Sport", price: 600, image: "w2.jpg" },
+                { name: "Smart Watch", price: 550, image: "w3.jpg" },
+                { name: "Watch Classique", price: 500, image: "w9.jpg" },
+                { name: "Watch Sport", price: 600, image: "w7.jpg" },
+                { name: "Smart Watch", price: 550, image: "w11.jpg" },
+            ],
+            "Climatiseur": [
+                { name: "Climatiseur LG", price: 1200, image: "G.jpg" },
+                { name: "Climatiseur Samsung", price: 1500, image: "G.jpg" }
+            ],
+            "Airpods": [
+                { name: "Airpods Pro", price: 900, image: "C.jpg" },
+                { name: "Airpods 2", price: 750, image: "C.jpg" }
+            ]
+        };
+
+        // Récupérer le produit sélectionné depuis l'URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const selectedProduct = urlParams.get("product");
+
+        // Afficher les variantes du produit sélectionné
+        document.getElementById("productTitle").innerText = Other suggestion for ${selectedProduct} ;
+        const productContainer = document.getElementById("productContainer");
+
+        if (products[selectedProduct]) {
+            products[selectedProduct].forEach(prod => {
+                const productCard = document.createElement("div");
+                productCard.classList.add("col-md-4", "text-center");
+                productCard.classList.add("product-card");
+productCard.innerHTML = `
+    <img src="${prod.image}" class="img-fluid mb-3" style="max-width: 200px; border-radius: 15px;">
+    <h5>${prod.name}</h5>
+    <span class="badge bg-success mb-2">${prod.price} DH</span><br>
+    <button class="btn btn-warning">Acheter</button>
+`;
+
+                productContainer.appendChild(productCard);
+            });
+        } else {
+            productContainer.innerHTML = "<p>Aucune variante disponible.</p>";
+        }
+    </script>
+
+
+
+<div id="purchaseModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Formulaire d'achat</h2>
+        <form id="purchaseForm">
+            <label for="productName">Produit :</label>
+            <input type="text" id="productName" name="productName" readonly>
+
+            <label for="fullName">Nom complet :</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="address">Adresse :</label>
+            <input type="text" id="address" name="address" required>
+
+            <button type="submit">Confirmer l'achat</button>
+        </form>
+    </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const modal = document.getElementById("purchaseModal");
+        const closeModal = document.querySelector(".close");
+        const productNameInput = document.getElementById("productName");
+        const purchaseForm = document.getElementById("purchaseForm");
+
+        // Ajouter un événement sur tous les boutons "Acheter"
+        document.querySelectorAll(".btn-primary").forEach(button => {
+            button.addEventListener("click", function () {
+                const productInfo = this.previousElementSibling.textContent;
+                productNameInput.value = productInfo.trim(); // Insérer le nom du produit
+                modal.style.display = "flex"; // Afficher le modal
+            });
+        });
+
+        // Fermer le modal quand on clique sur la croix
+        closeModal.addEventListener("click", function () {
+            modal.style.display = "none";
+        });
+
+        // Fermer le modal si on clique en dehors
+        window.addEventListener("click", function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+
+        // Gérer la soumission du formulaire
+        purchaseForm.addEventListener("submit", function (event) {
+            event.preventDefault(); // Empêcher le rechargement de la page
+            alert("Achat confirmé ! Merci pour votre commande.");
+            modal.style.display = "none"; // Fermer le modal après l'envoi
+        });
+    });
+</script>
+  
+<script src="black.js"></script>
+
+</body>
+</html>

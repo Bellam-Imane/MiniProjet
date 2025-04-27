@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  />
+  <link rel="stylesheet" href="black.css"/> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> 
+<body>
+
+    <nav id="nav" style="background-color: #daa520; height: 200px;"> 
+        <a target="_blank" href="user.html" style="position: absolute; top: 20px; right: 20px;">
+            <i class="fas fa-user" style="background-color: #daa520; padding: 10px; border-radius: 50%; color: white; font-size: 30px;"></i>
+        </a>
+        <div class="logo-text">
+            <img src="GS2.jpg" id="sans" class="logo" style="height: 90px; width: 90px; margin-bottom: 10px;">
+            <h1 style="margin-left: 10px; font-size: 40px; color: white; margin-bottom: 15px;">Golden Store</h1>
+        </div>
+        <div class="search-container">
+            <input id="searchBar" class="search-input" placeholder="Tapez ici un produit" style="padding: 10px; border-radius: 5px;">
+            <button class="search-button" style="margin-left: 5px; padding: 10px;">
+            <i class="fas fa-search" style="color: black;"></i>
+            </button>
+            <ul id="productList" class="Liste" style="list-style:circle;display: none;" > 
+                <li>Watch</li>
+                <li>Aspirateur</li>
+                <li>TV</li>
+                <li>climatiseur</li>
+                <li>Airpods</li>
+                <li>Watch</li>
+                <li>Airefire</li>
+                <li>Réfrigirateur</li>
+            </ul>
+        </div> 
+    </nav>
+
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-sm-6 col-md-4 text-center mt-5">
+            <img src="pcPo.jpg"   class="img-fluid" style="max-width: 250px";  >
+            <p><strong> PC portable (4500 DH)</strong></p>
+            <button class="botonat">acheter</button>
+        </div>
+
+        <div class="col-sm-6 col-md-4 text-center mt-5">
+            <img src="D.jpg" class="img-fluid" alt="Watch">
+        </br>
+        </br>
+            <p><strong>Watch (500 DH)</strong></p>
+            <button class="botonat">acheter</button>
+        </div>
+
+
+        <div class="col-sm-6 col-md-4  text-center" id="mouv">
+            <img src="G.jpg" class="img-fluid" alt="Airpods">
+            <p style="margin-top: -20px;"><strong>climatiseur (70 DH)</strong></p>
+            <button class="botonat">acheter</button>
+        </div>
+
+
+
+        <div  class="row mt-5">
+            <div class="col-sm-6 col-md-4 text-center "  >
+            <img src="B.jpg" class="img-fluid" alt="AireFryer" >
+
+        </br>
+        </br>
+            <p><strong>AireFryer (400 DH)</strong></p>
+            <button class="botonat">acheter</button>
+        </div>
+        <div class="col-sm-6 col-md-4 text-center">
+            <img src="C.jpg" class="img-fluid" alt="airpods" id="airpods">
+            <p><strong>airpods (400 DH)</strong></p>
+            <button class="botonat">acheter</button>
+        </div>
+        <div class="col-sm-6 col-md-4 text-center" id="mouv">
+        <img src="F.jpg"  alt="Watch">
+        <p><strong>TV (500 DH) </strong></p>
+        <button class="botonat">acheter</button>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-sm-6 col-md-4 text-center ">
+           <img src="ref.jpg"   class="img-fluid" style="max-width: 200px"  >
+           <p><strong> Réfrigérateur (10000 DH)</strong></p>
+           <button class="botonat">acheter</button>
+        </div>
+        <div class="col-sm-6 col-md-4 text-center ">
+           <img src="machineAlaver.jpg" class="img-fluid" style="width: 100%; max-width: 300px; height: auto; object-fit: cover;" id="machi">
+           <p><strong> Machine a laver (7500 DH)</strong></p>
+           <button class="botonat">acheter</button>
+        </div>
+        <div class="col-sm-6 col-md-4 text-center   " id="mouv">
+            <img src="A.jpg" class="img-fluid" alt="aspirateur" style="max-height: 300px" id="aspi">
+            <p><span style="color: red; font-weight: bold;">SOLD</span><br><strong>aspirateur (900 DH)</strong></p>
+            <button class="botonat">acheter</button>
+        </div>
+    </div>
+
+
+<!-- Modal du formulaire d'achat -->
+<div id="purchaseModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Formulaire d'achat</h2>
+        <form id="purchaseForm">
+            <label for="productName">Produit :</label>
+            <input type="text" id="productName" name="productName" readonly>
+
+            <label for="fullName">Nom complet :</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="address">Adresse :</label>
+            <input type="text" id="address" name="address" required>
+
+            <button type="submit">Confirmer l'achat</button>
+        </form>
+    </div>
+</div>
+<hr style="border: 1px solid hsl(43, 74%, 49%);"><br>
+
+    
+<a href="https://facebook.com" target="_blank">
+        <i class="fa-brands fa-facebook" style="color:goldenrod; font-size: 30px; "></i>
+</a>
+
+<a href="https://youtube.com" target="_blank">
+        <i class="fa-brands fa-youtube" style="color:goldenrod; font-size: 30px; "></i>
+</a>
+<a href="https://instagram.com" target="_blank">
+        <i class="fa-brands fa-instagram" style="color:goldenrod; font-size: 30px; "></i>
+</a>
+</br>
+</br>
+</br>
+</br>
+<h3>
+    <i class="fa-solid fa-lock"></i> <strong>Paiement 100% sécurisé</strong>
+</h3>
+<style>
+    #btn1{
+        border: none;
+        width: 20px;
+        height: 20px;
+        background-color: #daa520;
+        cursor: pointer;
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+
+    }
+</style>
+<script src="black.js"></script>
+</body>
+</html>
